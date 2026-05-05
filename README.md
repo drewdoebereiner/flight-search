@@ -31,6 +31,24 @@ The skill will:
 4. Write a CSV to the current directory
 5. Summarize the top 3 options in plain English
 
+## Example output
+
+`flights_japan_mar2026.csv`
+
+```
+ROUND TRIP
+Rank,Value Score,Departure Airport,Drive Time,Drive Cost,Airline(s),Flight Numbers,Route,Depart,Arrive,Stops,Total Flying Hrs,Layover Cities,Flight Price,Total Cost,Booking Link,Notes
+1,$1418,ORD,3h,$38,United,UA 837,ORD -> NRT,2026-03-27 11:30,2026-03-28 15:45,0,25.1,,,$1380,$1418,https://flights.google.com/...,
+2,$1491,ORD,3h,$38,"Delta / Korean Air","DL 159 | KE 702",ORD -> ICN -> NRT,2026-03-27 13:00,2026-03-28 18:20,1,26.6,ICN,$1453,$1491,https://flights.google.com/...,
+3,$1544,AAA,1h,$16,ANA,NH 112,AAA -> NRT,2026-03-27 09:15,2026-03-28 13:30,0,24.8,,,$1528,$1544,https://flights.google.com/...,
+
+MULTI-COUNTRY
+Rank,Value Score,Itinerary Type,Departure Airport,Drive Time,Drive Cost,Airline(s),Leg Breakdown,Route,Depart,Arrive,Total Flying Hrs,Countries + Days,Flight Price,Total Cost,L1 Booking Link,L2 Booking Link,L3 Booking Link,Notes
+1,$1721,South Korea First,ORD,3h,$38,"United / Asiana","UA 837 | OZ 101 | NH 112",ORD -> ICN -> NRT -> ORD,2026-03-27 11:30,2026-04-07 14:00,28.4,"South Korea: 3 days / Japan: 8 days",$1683,$1721,https://flights.google.com/...,https://flights.google.com/...,https://flights.google.com/...,
+```
+
+After writing the file, Claude summarizes the top 3 options in plain English and flags any extended layover opportunities or PTO efficiency wins.
+
 ## Requirements
 
 - `SERPAPI_API_KEY` environment variable -- get a key at [serpapi.com](https://serpapi.com)
